@@ -1,0 +1,47 @@
+id: org.sasview.sasview
+runtime: org.kde.Platform
+runtime-version: "5.15-23.08"
+sdk: org.kde.Sdk
+sdk-extensions:
+  - org.freedesktop.Platform.GL.default
+command: sasview
+finish-args:
+  - "--socket=fallback-x11"
+  - "--socket=wayland"
+  - "--device=dri"
+  - "--filesystem=host"
+modules:
+  - name: sasview
+    buildsystem: simple
+    build-commands:
+      - mkdir $FLATPAK_DEST/bin
+      - cp -r . $FLATPAK_DEST/bin/
+    sources:
+      - type: dir
+        path: sasview
+  - name: mesa
+    buildsystem: simple
+    build-commands:
+      - cp lib64/libEGL_mesa.so.0 $FLATPAK_DEST/bin/
+    sources:
+      - type: archive
+        url: https://kojipkgs.fedoraproject.org//packages/mesa/23.3.6/1.fc39/aarch64/mesa-libEGL-23.3.6-1.fc39.aarch64.rpm
+        sha256: 494e84657c4df91f1ef2b989e8870099ba46fefb9a11f55d78aae7740da29f99
+  - name: python-opengl
+    buildsystem: simple
+    build-commands:
+      - cp -r OpenGL $FLATPAK_DEST/bin/
+    sources:
+      - type: archive
+        url:  https://files.pythonhosted.org/packages/72/b6/970868d44b619292f1f54501923c69c9bd0ab1d2d44cf02590eac2706f4f/PyOpenGL-3.1.7.tar.gz
+        sha256: eef31a3888e6984fd4d8e6c9961b184c9813ca82604d37fe3da80eb000a76c86
+  - name: tinycc
+    buildsystem: simple
+    build-commands:
+      - "./configure --prefix=$FLATPAK_DEST"
+      - make
+      - make install
+    sources:
+      - type: git
+        url: https://github.com/TinyCC/tinycc.git
+        branch: mob
