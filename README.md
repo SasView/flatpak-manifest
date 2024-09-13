@@ -33,4 +33,5 @@ This requires that there be a `sasview` directory which contains a working PyIns
 - The documentation viewer does not work currently. I think this is because the documentation files are simply not being generated. 
 - There are no OpenCL drivers in the Flatpak so any functionality related to OpenCL will not work.
 - There is no desktop file so the application can't be launched from the desktop.
+- In the about page, SasView incorrectly states its installation path as `/app/bin` because, since its in a containerised environment, it only knows where it is installed in that environment itself, and not on the host system.
 
