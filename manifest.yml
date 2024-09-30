@@ -46,3 +46,20 @@ modules:
       - type: git
         url: https://github.com/TinyCC/tinycc.git
         branch: mob
+  - name: sasview-desktop
+    buildsystem: simple
+    build-commands:
+      - mv sasview.desktop org.sasview.sasview.desktop
+      - mkdir -p /app/share/applications/
+      - cp org.sasview.sasview.desktop /app/share/applications/
+    sources:
+      - type: file
+        path: sasview.desktop
+  - name: sasview-logo
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/share/icons/sasview
+      - cp ball.png /app/share/pixmaps/org.sasview.sasview.png
+    sources:
+      - type: file
+        path: ball.png
