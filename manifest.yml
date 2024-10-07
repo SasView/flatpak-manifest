@@ -12,6 +12,7 @@ finish-args:
   - "--device=dri"
   - "--filesystem=host"
 modules:
+  - shared-modules/glu/glu-9.json
   - name: sasview
     buildsystem: simple
     build-commands:
