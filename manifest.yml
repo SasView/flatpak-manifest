@@ -20,14 +20,6 @@ modules:
     sources:
       - type: dir
         path: sasview
-  - name: mesa
-    buildsystem: simple
-    build-commands:
-      - cp lib64/libEGL_mesa.so.0 $FLATPAK_DEST/bin/
-    sources:
-      - type: archive
-        url: https://kojipkgs.fedoraproject.org//packages/mesa/23.3.6/1.fc39/aarch64/mesa-libEGL-23.3.6-1.fc39.aarch64.rpm
-        sha256: 494e84657c4df91f1ef2b989e8870099ba46fefb9a11f55d78aae7740da29f99
   - name: python-opengl
     buildsystem: simple
     build-commands:
