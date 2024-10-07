@@ -58,7 +58,7 @@ modules:
   - name: sasview-logo
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/share/icons/sasview
+      - mkdir -p /app/share/pixmaps
       - cp ball.png /app/share/pixmaps/org.sasview.sasview.png
     sources:
       - type: file
