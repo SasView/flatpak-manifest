@@ -39,7 +39,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/TinyCC/tinycc.git
-        branch: mob
+        commit: 45cff8f03fe58a1ded52864bb6640998ea6775e5
   - name: sasview-desktop
     buildsystem: simple
     build-commands:
