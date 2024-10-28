@@ -44,17 +44,18 @@ modules:
   - name: sasview-desktop
     buildsystem: simple
     build-commands:
-      - mv sasview.desktop org.sasview.sasview.desktop
       - mkdir -p /app/share/applications/
       - cp org.sasview.sasview.desktop /app/share/applications/
     sources:
       - type: file
-        path: sasview.desktop
+        url: https://raw.githubusercontent.com/SasView/sasview/refs/heads/release_6.0.0/build_tools/application_metadata/org.sasview.sasview.desktop
+        sha256: 52102796f2010447b447cd37fe6246362cd91234f3c762c2b1c14771a451fa85
   - name: sasview-logo
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/512x512/apps/
-      - cp ball_resized.png /app/share/icons/hicolor/512x512/apps/org.sasview.sasview.png
+      - cp org.sasview.sasview.png /app/share/icons/hicolor/512x512/apps/org.sasview.sasview.png
     sources:
       - type: file
-        path: ball_resized.png
+        url: https://github.com/SasView/sasview/blob/release_6.0.0/build_tools/application_metadata/org.sasview.sasview.png?raw=true
+        sha256: fa4e310c68c88ad7f6ebdd4cf4b4e91fac1b729c71624fe6c971970640e5766d
