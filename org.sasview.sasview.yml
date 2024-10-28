@@ -20,8 +20,9 @@ modules:
       - mkdir $FLATPAK_DEST/bin
       - cp -r . $FLATPAK_DEST/bin/
     sources:
-      - type: dir
-        path: sasview
+      - type: archive
+        url: https://github.com/SasView/sasview/releases/download/v6.0.0/SasView-6.0.0-Ubuntu-22.04.tar.gz
+        sha256: 585d45689c1e5e6ba6e7e972e3ab15f0b522b9bdf9f9b0b11c550b1064137ea9
   - name: python-opengl
     buildsystem: simple
     build-commands:
