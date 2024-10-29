@@ -31,17 +31,6 @@ modules:
       - type: archive
         url:  https://files.pythonhosted.org/packages/72/b6/970868d44b619292f1f54501923c69c9bd0ab1d2d44cf02590eac2706f4f/PyOpenGL-3.1.7.tar.gz
         sha256: eef31a3888e6984fd4d8e6c9961b184c9813ca82604d37fe3da80eb000a76c86
-  - name: tinycc
-    buildsystem: simple
-    build-commands:
-      - "./configure --prefix=$FLATPAK_DEST"
-      - "ln -s $FLATPAK_DEST/bin/tcc $FLATPAK_DEST/bin/cc"
-      - make
-      - make install
-    sources:
-      - type: git
-        url: https://github.com/TinyCC/tinycc.git
-        commit: 45cff8f03fe58a1ded52864bb6640998ea6775e5
   - name: sasview-desktop
     buildsystem: simple
     build-commands:
