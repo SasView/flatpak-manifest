@@ -35,6 +35,7 @@ modules:
     buildsystem: simple
     build-commands:
       - "./configure --prefix=$FLATPAK_DEST"
+      - "ln -s $FLATPAK_DEST/bin/tcc $FLATPAK_DEST/bin/cc"
       - make
       - make install
     sources:
