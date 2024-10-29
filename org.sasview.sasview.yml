@@ -11,7 +11,7 @@ finish-args:
   - "--share=ipc"
   - "--socket=wayland"
   - "--device=dri"
-  - "--filesystem=host"
+  - "--filesystem=home"
 modules:
   - shared-modules/glu/glu-9.json
   - name: sasview
