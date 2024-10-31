@@ -54,7 +54,9 @@ modules:
   - name: sasview-metainfo
     buildsystem: simple
     build-commands:
+      - mkdir -p /app/share/metainfo/
       - cp org.sasview.sasview.metainfo.xml /app/share/metainfo/
     sources:
       - type: file
         url: https://raw.githubusercontent.com/SasView/sasview/2e519c48373a4ebe3266225c5fccb3870f6403b2/build_tools/application_metadata/org.sasview.sasview.metainfo.xml
+        sha256: 47f09768043057bf39b43e7162a21577f2e5404f5b9549eceae31291725c6ef4
