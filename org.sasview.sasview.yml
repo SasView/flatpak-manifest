@@ -51,3 +51,10 @@ modules:
       - type: file
         url: https://raw.githubusercontent.com/SasView/sasview/2e519c48373a4ebe3266225c5fccb3870f6403b2/build_tools/application_metadata/org.sasview.sasview.png
         sha256: fa4e310c68c88ad7f6ebdd4cf4b4e91fac1b729c71624fe6c971970640e5766d
+  - name: sasview-metainfo
+    buildsystem: simple
+    build-commands:
+      - cp org.sasview.sasview.metainfo.xml /app/share/metainfo/
+    sources:
+      - type: file
+        url: https://raw.githubusercontent.com/SasView/sasview/2e519c48373a4ebe3266225c5fccb3870f6403b2/build_tools/application_metadata/org.sasview.sasview.metainfo.xml
